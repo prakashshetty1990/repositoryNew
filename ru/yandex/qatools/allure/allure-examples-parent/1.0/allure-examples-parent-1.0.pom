@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>ru.yandex.qatools.allure</groupId>
+    <artifactId>allure-examples-parent</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>Allure Examples Parent</name>
+    <description>Parent for Allure examples projects. It helps to hide
+        unnecessary pom elements such as compiler plugin configuration.</description>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.4</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <developers>
+        <developer>
+            <id>charlie</id>
+            <name>Dmitry Baev</name>
+            <email>charlie@yandex-team.ru</email>
+            <organization>Yandex</organization>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/allure-framework/allure-core/issues</url>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/allure-examples/allure-examples-parent</url>
+        <connection>scm:git@github.com:allure-examples/allure-examples-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:allure-examples/allure-examples-parent.git</developerConnection>
+    </scm>
+</project>
